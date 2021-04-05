@@ -27,7 +27,7 @@ export class MemberService {
         });
     }
 
-    getFrontend(opitinos?: IMemberSearch) {
+    getFrontend() {
         return new Promise<IAccout[]>((resolve, reject) => {
             let frontends = this.account.mockUserItems;
             frontends = this.account
@@ -40,7 +40,7 @@ export class MemberService {
         });
     }
 
-    getBackend(opitinos?: IMemberSearch) {
+    getBackend() {
         return new Promise<IAccout[]>((resolve, reject) => {
             let backends = this.account.mockUserItems;
             backends = this.account

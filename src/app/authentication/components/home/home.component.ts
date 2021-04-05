@@ -29,8 +29,8 @@ export class HomeComponent implements OnInit {
     ngOnInit() {
         this.initialLoadChartJS();
         this.initialLoadMembers();
-        // this.initialLoadFrontend();
-        // this.initialLoadBackend();
+        this.initialLoadFrontend();
+        this.initialLoadBackend();
     }
 
     private initialLoadMembers(opitinos?: IMemberSearch) {
@@ -45,19 +45,19 @@ export class HomeComponent implements OnInit {
             .catch(err => this.alert.notify(err.Message));
     }
 
-    // private initialLoadFrontend(opitinos?: IMemberSearch) {
-    //     this.member
-    //         .getFrontend(opitinos)
-    //         .then(frontends => this.frontends = frontends)
-    //         .catch(err => this.alert.notify(err.Message));
-    // }
+    private initialLoadFrontend() {
+        this.member
+            .getFrontend()
+            .then(frontends => this.frontends = frontends)
+            .catch(err => this.alert.notify(err.Message));
+    }
 
-    // private initialLoadBackend(opitinos?: IMemberSearch) {
-    //     this.member
-    //         .getFrontend(opitinos)
-    //         .then( backends => this.backends = backends)
-    //         .catch(err => this.alert.notify(err.Message));
-    // }
+    private initialLoadBackend() {
+        this.member
+            .getBackend()
+            .then( backends => this.backends = backends)
+            .catch(err => this.alert.notify(err.Message));
+    }
     // Run Chart js
     private initialLoadChartJS() {
         var data = {
